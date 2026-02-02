@@ -10,9 +10,9 @@ import edu.oregonstate.cs492.githubsearch.data.GitHubRepo
 class GitHubRepoListAdapter : RecyclerView.Adapter<GitHubRepoListAdapter.GitHubRepoViewHolder>() {
     private var gitHubRepoList = listOf<GitHubRepo>()
 
-    fun updateRepoList(newRepoList: List<GitHubRepo>) {
+    fun updateRepoList(newRepoList: List<GitHubRepo>?) {
         notifyItemRangeRemoved(0, gitHubRepoList.size)
-        gitHubRepoList = newRepoList
+        gitHubRepoList = newRepoList ?: listOf()
         notifyItemRangeInserted(0, gitHubRepoList.size)
     }
 
